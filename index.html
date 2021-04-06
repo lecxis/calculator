@@ -13,17 +13,22 @@ body{
 .frame{
     margin: 10px 10px;
     border: 2px solid Blue;
-    height: 100
-    %;
+    height: 100%;
     width: 70%;
     background: snow;
-    padding-top: 3%;
+    padding-top: 0;
+    margin-top: 3%;
+}
+.title{
+    margin-top: 0;
+    padding-top: 0;
 }
 .frame form{
     margin:10px auto;
     width:70%;
     margin-bottom: 0px;
     padding-bottom: 0;
+    padding-top: 3%;
 }
 .frame form #display{
     width:100%;
@@ -68,9 +73,13 @@ body{
     .frame{
        width: 90%;
        background: blueviolet;
+       height: 600px;
     }
     body{
         background: brown;
+    }
+    .frame form #display{
+        height: 60px;
     }
 }
 </style>
@@ -78,6 +87,9 @@ body{
 </head>
 <body>
     <div class='frame'>
+        <div class="title">
+            Olalekan Calculator
+        </div>
         <form>
             <input type="text" id="display">
         </form>
