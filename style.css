@@ -1,0 +1,84 @@
+*{
+    box-sizing:border-box;
+}
+body{
+background-color:aquamarine;
+}
+.frame{
+margin: 10px 10px;
+border: 2px solid Blue;
+height: auto;
+width: 70%;
+background: snow;
+padding-top: 0;
+margin-top: 3%;
+}
+.title{
+margin-top: 0;
+padding-top: 0;
+font-weight: 800;
+}
+.frame form{
+margin:10px auto;
+width:70%;
+margin-bottom: 0px;
+padding-bottom: 0;
+padding-top: 3%;
+}
+.frame form #display{
+width:100%;
+border: 4px solid black;
+height: 3em;
+margin-bottom: 0;
+padding-bottom: 0;
+background: rgb(1, 21, 24);
+font-size: 20px;
+font-weight: 600;
+color: cornsilk;
+
+}
+
+.frame .button{
+margin:10px 20px;
+margin-top:15px;
+border: 2px solid red;
+height: 70%;
+width: 85%;
+background: rgb(9, 180, 202);
+display:grid;
+grid-template-columns: 2fr 1fr;
+column-gap: 5px;
+
+}
+.button .numbers{
+padding: 10px;
+display:grid;
+grid-template-columns: 1fr 1fr 1fr;
+column-gap: 5px;
+row-gap: 5px;
+
+}
+.number, .opp, .clear, .equal, .ce{
+font-size: 20px;
+font-weight: 600;
+}
+
+.button .func{
+padding:5px;
+display:grid;
+grid-template-columns: 1fr 1fr;
+column-gap: 5px;
+row-gap: 5px;
+}
+@media (max-width: 700px){
+.frame{
+   width: 90%;
+   height: 600px;
+}
+body{
+    background: brown;
+}
+.frame form #display{
+    height: 60px;
+}
+}

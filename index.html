@@ -1,89 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-
-<title>Calculator</title>
-<style>
-    *{
-        box-sizing:border-box;
-    }
-body{
-    background-color:aquamarine;
-}
-.frame{
-    margin: 10px 10px;
-    border: 2px solid Blue;
-    height: 600px;
-    width: 70%;
-    background: snow;
-    padding-top: 0;
-    margin-top: 3%;
-}
-.title{
-    margin-top: 0;
-    padding-top: 0;
-}
-.frame form{
-    margin:10px auto;
-    width:70%;
-    margin-bottom: 0px;
-    padding-bottom: 0;
-    padding-top: 3%;
-}
-.frame form #display{
-    width:100%;
-    border: 2px solid black;
-    height: 40px;
-    margin-bottom: 0;
-    padding-bottom: 0;
-}
-
-.frame .button{
-    margin:10px 20px;
-    margin-top:15px;
-    border: 2px solid red;
-    height: 70%;
-    width: 85%;
-    background: rgb(9, 180, 202);
-    display:grid;
-    grid-template-columns: 2fr 1fr;
-    column-gap: 5px;
-
-}
-.button .numbers{
-    padding: 10px;
-    display:grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    column-gap: 5px;
-    row-gap: 5px;
-    
-}
-.number, .opp, .clear, .equal{
-    font-size: 20px;
-    font-weight: 600;
-}
-.button .func{
-    padding:5px;
-    display:grid;
-    grid-template-columns: 1fr 1fr;
-    column-gap: 5px;
-    row-gap: 5px;
-}
-@media only screen and (max-width: 900px){
-    .frame{
-       width: 90%;
-       background: blueviolet;
-       height: 600px;
-    }
-    body{
-        background: brown;
-    }
-    .frame form #display{
-        height: 60px;
-    }
-}
-</style>
-
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width initial-scale=1">
+    <title>Calculator</title>
+     <link href="style.css" rel="stylesheet" type="text/css">
 </head>
 <body>
     <div class='frame'>
@@ -115,86 +36,13 @@ body{
                 <button type="button"class='opp'>/</button>
                 <button type="button" class='opp'>-</button>
                 <button type="button"class='opp'>+</button>
-                <button type="button"class='opp'>%</button>
+                <button type="button"class='ce'>CE</button>
 
             </div>
 
         </div>
     </div>
-    <script >
-        console.log('we are live');
-        var display=document.querySelector('#display');
-        var value= display.value;
-        var clear=false;
+    <script src="script.js"></script>>
 
-    document.querySelectorAll('.number').forEach((button)=>{
-        button.addEventListener("click",
-            function(){
-                if(clear){
-                    value =button.innerHTML
-                    clear=false;
-                }
-                else{
-                    value+=button.innerHTML;
-                }
-                
-                display.value=value;
-                }
-        );
-    }
-    );
-    document.querySelectorAll('.opp').forEach((button)=>{
-        button.addEventListener("click",
-            function(){
-                    value+=button.innerHTML;
-                    clear=false;
-                
-                display.value=value;
-                }
-        );
-    }
-    );
-    document.querySelector('.equal').addEventListener("click",
-    function(){
-                value=value.replace(/x/g,"*");
-                value=eval(value);
-                display.value=value;
-                clear=true;
-                }
-        );
-        document.querySelector('.clear').addEventListener("click",
-    function(){
-                if(clear){
-                    value="";
-                    display.value=value;
-                }
-                else{
-                    value=value.substring(0, value.length-1);
-                display.value=value;
-                }
-                }
-                
-        );
-        var clearTime;
-        document.querySelector('.clear').addEventListener("mousedown",
-    function(){
-       
-        console.log('mouse is down i repeat')
-        clearTime=setTimeout(() => {
-            value="";
-             display.value=value;
-        },2000);
-    }
-        );
-
-        document.querySelector('.clear').addEventListener("mouseup",
-    function(){
-        console.log('mouse is upi repeat');
-        if(clearTime){
-            clearTimeout(clearTime); 
-        }
-    }
-        );
-    </script>
 </body>
 </html>
