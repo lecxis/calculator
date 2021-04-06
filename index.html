@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>Calculator</title>
+<style>
+    *{
+        box-sizing:border-box;
+    }
+body{
+    background-color:aquamarine;
+}
+.frame{
+    margin: 10px 10px;
+    border: 2px solid Blue;
+    height: 300px;
+    width: 300px;
+    background: snow;
+}
+.frame form{
+    margin:10px auto;
+    width:70%;
+}
+.frame form #display{
+    width:100%;
+    border: 2px solid black;
+}
+
+.frame .button{
+    margin:10px 20px;
+    margin-top:28px;
+
+    border: 2px solid red;
+    height: 70%;
+    width: 85%;
+    background: rgb(9, 180, 202);
+    display:grid;
+    grid-template-columns: 2fr 1fr;
+
+}
+.button .numbers{
+    display:grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+.button .func{
+    padding:5px;
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+}
+</style>
+
+</head>
+<body>
+    <div class='frame'>
+        <form>
+            <input type="text" id="display">
+        </form>
+        <div class="button">
+            <div class="numbers">
+                <button type="button" class='number'>1</button>
+                <button type="button" class='number'>2</button>
+                <button type="button"class='number'>3</button>
+                <button type="button" class='number'>4</button>
+                <button type="button" class='number'>5</button>
+                <button type="button" class='number'>6</button>
+                <button type="button" class='number'>7</button>
+                <button type="button" class='number'>8</button>
+                <button type="button" class='number'>9</button>
+                <button type="button" class='number'>.</button>
+                <button type="button" class='number'>0</button>
+                <button type="button" class='equal'>=</button>
+                
+            </div>
+            <div class="func">
+                <button type="button" class='clear'>C</button>
+                <button type="button" class='opp'>x</button>
+                <button type="button"class='opp'>/</button>
+                <button type="button" class='opp'>-</button>
+                <button type="button"class='opp'>+</button>
+                <button type="button"class='opp'>%</button>
+
+            </div>
+
+        </div>
+    </div>
+    <script >
+        console.log('we are live');
+        var display=document.querySelector('#display');
+        var value= display.value;
+        var clear=false;
+
+    document.querySelectorAll('.number').forEach((button)=>{
+        button.addEventListener("click",
+            function(){
+                if(clear){
+                    value =button.innerHTML
+                    clear=false;
+                }
+                else{
+                    value+=button.innerHTML;
+                }
+                
+                display.value=value;
+                }
+        );
+    }
+    );
+    document.querySelectorAll('.opp').forEach((button)=>{
+        button.addEventListener("click",
+            function(){
+                    value+=button.innerHTML;
+                    clear=false;
+                
+                display.value=value;
+                }
+        );
+    }
+    );
+    document.querySelector('.equal').addEventListener("click",
+    function(){
+                value=value.replace(/x/g,"*");
+                value=eval(value);
+                display.value=value;
+                clear=true;
+                }
+        );
+        document.querySelector('.clear').addEventListener("click",
+    function(){
+                if(clear){
+                    value="";
+                    display.value=value;
+                }
+                else{
+                    value=value.substring(0, value.length-1);
+                display.value=value;
+                }
+                }
+                
+        );
+        var clearTime;
+        document.querySelector('.clear').addEventListener("mousedown",
+    function(){
+       
+        console.log('mouse is down i repeat')
+        clearTime=setTimeout(() => {
+            value="";
+             display.value=value;
+        },2000);
+    }
+        );
+
+        document.querySelector('.clear').addEventListener("mouseup",
+    function(){
+        console.log('mouse is upi repeat');
+        if(clearTime){
+            clearTimeout(clearTime); 
+        }
+    }
+        );
+    </script>
+</body>
+</html>
