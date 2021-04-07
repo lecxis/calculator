@@ -32,7 +32,12 @@
     );
     document.querySelector('.equal').addEventListener("click",
     function(){
-                value=value.replace(/x/g,"*");
+                if (typeof value==="string"){
+                    if(value.includes('x')){
+                        value=value.replace(/x/g,"*");
+                    }
+
+                }
                 value=eval(value);
                 display.value=value;
                 clear=true;
