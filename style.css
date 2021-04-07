@@ -6,24 +6,31 @@ background-color:aquamarine;
 }
 .frame{
 margin: 10px 10px;
-border: 2px solid Blue;
+border: 2px solid Black;
 height: auto;
 width: 70%;
 background: snow;
 padding-top: 0;
 margin-top: 3%;
+margin-bottom: 0;
 }
-.title{
+.title, footer{
 margin-top: 0;
 padding-top: 0;
 font-weight: 800;
 }
+footer{
+    margin-left: 10px;  
+    color: black;
+}
+
 .frame form{
-margin:10px auto;
-width:70%;
+margin:10px 0px;
+width:100%;
 margin-bottom: 0px;
 padding-bottom: 0;
 padding-top: 3%;
+align-self: center;
 }
 .frame form #display{
 width:100%;
@@ -37,11 +44,15 @@ font-weight: 600;
 color: cornsilk;
 
 }
+.frame form{
+    width: 85%;
+    margin:10px 20px;
 
+}
 .frame .button{
 margin:10px 20px;
 margin-top:15px;
-border: 2px solid red;
+border: 2px solid black;
 height: 70%;
 width: 85%;
 background: rgb(9, 180, 202);
@@ -73,12 +84,30 @@ row-gap: 5px;
 @media (max-width: 700px){
 .frame{
    width: 90%;
-   height: 600px;
+   height: auto;
+   
 }
 body{
-    background: brown;
+    background: black;
 }
 .frame form #display{
     height: 60px;
+}
+.frame form,
+.frame .button{
+    margin:10px 18px;
+    width:90%;   
+}
+.frame form{
+width: 90%;
+margin-right: 10px;
+}
+.button .func{
+    padding: 10px;
+    grid-template-columns: 1fr;
+    row-gap: 10px;
+}
+footer{ 
+    color: whitesmoke;
 }
 }

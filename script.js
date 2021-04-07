@@ -10,7 +10,7 @@
                     value =button.innerHTML
                     clear=false;
                 }
-                else{
+                else if(value.length <30){
                     value+=button.innerHTML;
                 }
                 
@@ -54,8 +54,6 @@
         var clearTime;
         document.querySelector('.clear').addEventListener("mousedown",
     function(){
-       
-        console.log('mouse is down i repeat')
         clearTime=setTimeout(() => {
             value="";
              display.value=value;
@@ -65,7 +63,6 @@
 
         document.querySelector('.clear').addEventListener("mouseup",
     function(){
-        console.log('mouse is upi repeat');
         if(clearTime){
             clearTimeout(clearTime); 
         }
@@ -82,8 +79,6 @@
        
             document.querySelector('.clear').addEventListener("touchstart",
         function(){
-           
-            console.log('mouse is down i repeat')
             clearTime=setTimeout(() => {
                 value="";
                  display.value=value;
@@ -93,7 +88,6 @@
 
             document.querySelector('.clear').addEventListener("touchend",
             function(){
-                console.log('mouse is upi repeat');
                 if(clearTime){
                     clearTimeout(clearTime); 
                 }
